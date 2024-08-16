@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Suma5834157.MainPage">
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Entry x:Name="Entryprimernumero"
+                   Placeholder="Ingresa el primer nuemro"
+                   Keyboard="Numeric"/>
+            <Entry x:Name="Entrysegundonumero"
+                   Placeholder="Ingresa el segundo numero"
+                   Keyboard="Numeric"/>
+            <Entry x:Name="labelresultado"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+
+            <Button x:Name="sumarBtn"
+                    Text="Click me"
+                    Clicked="sumarBtn_Clicked"
+                    HorizontalOptions="Center"/>
+
+
+
+            <ListView x:Name="Listview" FlexLayout.Grow="1" HasUnevenRows="True" ItemTapped="Listview_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <VerticalStackLayout Padding="5">
+                        <Label Text="{Binding Numero1}" FontSize="17" FontAttributes="Bold"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+
+
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Numero2}"/>
+                                    <Label Grid.Column="2" Text="{Binding Suma}" FontAttributes="Bold"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
